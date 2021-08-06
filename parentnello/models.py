@@ -19,7 +19,7 @@ class Content(models.Model):
 class Comment(models.Model):
     author = models.CharField(max_length=300,blank=True)
     comment = models.TextField(blank=True)
-    rating = models.IntegerField()
+    rating = models.IntegerField(default=0)
     class Meta:
         verbose_name = 'comment'
         verbose_name_plural = 'comments'
@@ -31,7 +31,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     nsfw = models.BooleanField(default=False, blank=True)
     creation_date = models.DateField(auto_now=True)
-    rating = models.IntegerField()
+    rating = models.IntegerField(default=0)
     author = models.CharField(max_length=300)
     comments = models.ForeignKey(Comment, on_delete=models.CASCADE,blank=True,null=True)
     content = models.OneToOneField(
