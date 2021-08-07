@@ -1,4 +1,10 @@
 # nello
+## Built With:
+
+- Python
+- Django
+
+## How to run the project locally:
 To run this project, follow these steps:
 
 1.  (optional) Create and activate a virtualenv.
