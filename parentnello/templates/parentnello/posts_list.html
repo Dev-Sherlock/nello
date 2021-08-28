@@ -1,18 +1,21 @@
 {% extends "parentnello/base.html" %}
+{% load static %}
+
 
 {% block content %}
 <h1>Posts</h1>
 {% if posts %}
 <ul>
     {% for post in posts %}
-    <div class="card mb-3">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-      <h4 class="card-title"><a href="{%url 'post' post.id%}">{{ post.title }}</a></h4><h5> ({{post.author}})</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">{{post.creation_date}}</small></p>
-  </div>
-</div>
+    <div class="card mb-3" style="width:60%">
+        <img src="{% static 'media/' %}{{post.content.image}}" class="card-img-top img-thumbnail" alt="...">
+        <div class="card-body">
+            <h4 class="card-title"><a href="{%url 'post' post.id%}">{{ post.title }}</a></h4><h5> ({{post.author}})</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">{{post.creation_date}}</small></p>
+        </div>
+    </div>
 
     {% endfor %}
 </ul>

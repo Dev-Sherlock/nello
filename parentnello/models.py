@@ -5,7 +5,7 @@ from django.db import models
 
 class Content(models.Model):
     text = models.TextField(editable=True, blank=True)
-    image = models.ImageField(editable=True, blank=True)
+    image = models.ImageField(upload_to='images/',editable=True, blank=True)
     video = models.FileField(upload_to='videos/',blank=True)
 
     class Meta:
